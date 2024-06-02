@@ -47,17 +47,19 @@
 
 			var currentUrl = window.location.href;
 
-			var url = url1; 
-			if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+			if (currentUrl.toLowerCase().indexOf('?') > -1) {
 				var url = url1; 
-			} else {
-				var url = url2;
-			}
-
-			if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
-				window.open(url)
-			} else {
-				window.location.href = url;
+				if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+					var url = url1; 
+				} else {
+					var url = url2;
+				}
+	
+				if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
+					window.open(url)
+				} else {
+					window.location.href = url;
+				}
 			}
 		}
 	</script>

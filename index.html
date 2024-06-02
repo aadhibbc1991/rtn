@@ -5,23 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
-			width: 99%;
 			height: 99%;
+			width: 99%;
 		}
 		.titleText {
-			font-size: 150%;
+			font-size: 200%;
 			font-family: sans-serif;
 			color: gray;
 		}
 		.btns {
-			width: 100%;
+			width: 80%;
 			height: 100px;
 			font-size: 150%;
 			font-family: sans-serif;
 			text-align: center;
 			border-radius: 10px;
 			margin: 2px;
-			border: 1px solid transparent;
+			border: 1px solid #303030;
+			transition: 0.5s;
+		}
+		.btns:active {
+			background-color: rgba(30, 30, 30, 1);
+			color: rgba(225, 225, 225, 1);
+		}
+		.btns:hover {
+			background-color: rgba(30, 30, 30, 1);
+			color: rgba(225, 225, 225, 1);
 		}
 	</style>
 	<script type="text/javascript">
@@ -31,7 +40,11 @@
 		var nature = ['', 'lesbo', 'lesbian', 'inbred', 'homemade', 'real'];
 		var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
 			'double penetration', 'cuckold', 'mothers day'];
+		var numOfUrls = starNames.length * relation1.length * relation2.length * nature.length * situation.length;
 		function buildRandomUrl() {
+			
+			titleId.innerHTML = '🔥RANDOM SEARCH🔥 ' + numOfUrls + ' ENTRIES..';
+
 			var starNameIdx = Math.floor(Math.random()*starNames.length) - 1;
 			var relation1Idx = Math.floor(Math.random()*relation1.length) - 1;
 			var relation2Idx = Math.floor(Math.random()*relation2.length) - 1;
@@ -68,12 +81,12 @@
 </head>
 <body onload="buildRandomUrl()">
 	<center>
-		<a class="titleText">🔥RANDOM SEARCH INITIATED...</a>
+		<a class="titleText" id="titleId"></a>
 		<br>
 		<button class="btns" onclick="window.location.href = '?google=no&open=newtab';">SEARCH IN NEW TAB</button>
+		<button class="btns" onclick="window.location.href = '?google=yes&open=newtab';">GOOGLE SEARCH IN<br>NEW TAB</button>
 		<button class="btns" onclick="window.location.href = '?google=no&open=sametab';">SEARCH IN SAME TAB</button>
-		<button class="btns" onclick="window.location.href = '?google=yes&open=newtab';">SEARCH IN NEW TAB WITH GOOGLE</button>
-		<button class="btns" onclick="window.location.href = '?google=yes&open=sametab';">SEARCH IN SAME TAB WITH GOOGLE</button>
+		<button class="btns" onclick="window.location.href = '?google=yes&open=sametab';">GOOGLE SEARCH IN<br>SAME TAB</button>
 	</center>
 </body>
 </html>

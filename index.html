@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Routine</title>
+	<title>Random Search</title>
+	<style type="text/css">
+		.titleText {
+			font-size: 150%;
+			font-family: sans-serif;
+			color: gray;
+		}
+	</style>
 	<script type="text/javascript">
-		function getEntity() {
-			var entArr = document.getElementById('inputbox').value.trim().split('\n');
-			var numOfEnt = entArr.length;
+		var starNames = ['lisa ann', 'julia ann', 'nicole aniston', 'bridgette b', 'krissy lynn', 'heather vahn', 'kendra lust', 'brandi love', 'crystal rush', 'brooklyn chase', 'coco vandi', 'nikki brooks', 'eva notty', 'ava addams', 'aubrey black', 
+			'janice griffith', 'dillion harper', 'adria rae', 'athena faris', 
+			'indian', 'desi', ''];
+		var relation1 = ['mom', 'step mom', 'milf', 'aunt', 'step aunt'];
+		var relation2 = ['', 'son', 'step son', 'daughter', 'sister']
+		var nature = ['', 'lesbo', 'lesbian', 'inbred', 'homemade', 'real'];
+		var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
+			'double penetration', 'cuckold', 'mothers day'];
+		function buildRandomUrl() {
+			var starNameIdx = Math.floor(Math.random()*starNames.length) - 1;
+			var relation1Idx = Math.floor(Math.random()*relation1.length) - 1;
+			var relation2Idx = Math.floor(Math.random()*relation2.length) - 1;
+			// var natureIdx = Math.floor(Math.random()*nature.length) - 1;
+			var natureIdx = 0;
+			var situationIdx = Math.floor(Math.random()*situation.length) - 1;
 			
-			var d = new Date();
-			var s = d.getSeconds();
-			console.log('sec')
-			console.log(s)
+			var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + nature[natureIdx] + ' ' + situation[situationIdx];
 
-			var index = s % numOfEnt;
-			console.log('index')
-			console.log(index)
+			var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
 
-			// var index = Math.floor((Math.random() * numOfEnt - 1) + 1);
-			var ent = entArr[index].trim();
-			var url = 'https://www.google.co.in/search?q='+ent.replace(/ /g, '+')+'&tbm=vid'
-			window.open(url, target="_blank");
-			// window.location.href = url;
+			var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid';
+
+			var url2 = 'https://www.xvideos2.uk/?k='+query.replace(/ /g, '%20');
+
+			var currentUrl = window.location.href;
+
+			var url = url1; 
+			if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+				var url = url1; 
+			} else {
+				var url = url2;
+			}
+
+			if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
+				window.open(url)
+			} else {
+				window.location.href = url;
+			}
 		}
 	</script>
 </head>
-<body onload="getEntity()">
-<textarea id="inputbox" style="display: none;">
-Heather Vahn Favor Full Video
-Heather Vahn Sleepover Full Video
-Aubrey Black Stepmom threesome Full Video
-Ariella Ferrera and Missy Threesome Full Video
-Ariella Ferrera My Sons Best Friends Full Video
-Bridgette B Stepmom Virgin Son Full Video
-Bridgette B Sausage Party Full Video
-Bridgette B Screws Sons Friends Wild
-Ariella Ferrera Stepmom Under The Influence
-</textarea>
+<body onload="buildRandomUrl()">
+	<a class="titleText">🔥RANDOM SEARCH INITIATED...</a>
 </body>
 </html>

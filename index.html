@@ -35,12 +35,13 @@
 	</style>
 	<script type="text/javascript">
 		var starNames = ["Alexis Fawx", "Ariella Ferrera", "Aubrey Black", "Ava Addams", "Brandi Love", "Brooklyn Chase", "Bridgette B", "Britney Amber", "Carmen Valentina", "Cherie DeVille", "Coco Vandi", "Crystal Rush", "Danica Dillon", "Destiny Dixon", "Diamond Foxxx", "Heather Vahn", "India Summer", "Jessa Rhodes", "Jewels Jade", "Jodi West", "Julia Ann", "Kendra Lust", "Krissy Lynn", "Lisa Ann", "Lexi Luna", "Nicole Aniston", "Nikki Brooks", "Nina Elle", "Phoenix Marie", "Rachael Cavalli", "Raven Hart", "Reagan Foxx", "Shay Fox", "Tanya Tate", "Tegan James", "Veronica Avluv", "", "Adria Rae", "Dillion Harper", "Janice Griffith", "Athena Faris", "Jordi", "James Deen", "India", "Desi"];
-		var relation1 = ['mom', 'step mom', 'milf', 'aunt', 'step aunt'];
+		var relation1 = ['mom', 'step mom', 'milf', 'aunt', 'step aunt', 'mom and aunt'];
 		// var relation2 = ['', 'son', 'step son', 'daughter', 'sister']
-		var relation2 = ['', 'son', 'step son']
-		var nature = ['', 'inbred', 'homemade', 'real'];
-		var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
-			'double penetration', 'cuckold', 'mothers day'];
+		// var relation2 = ['', 'son', 'step son'];
+		var relation2 = [''];
+		// var nature = ['', 'inbred', 'homemade', 'real'];
+		var nature = [''];
+		var situation = ['', 'gangbang', 'sex party', 'threesome', 'double penetration', 'cuckold', 'mothers day', 'accidental creampie', 'stuck'];
 		var numOfUrls = starNames.length * relation1.length * relation2.length * nature.length * situation.length;
 		function buildRandomUrl() {
 			
@@ -53,13 +54,14 @@
 			var natureIdx = 0;
 			var situationIdx = Math.floor(Math.random()*situation.length) - 1;
 			
-			var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + nature[natureIdx] + ' ' + situation[situationIdx];
+			var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + nature[natureIdx] + ' ' + situation[situationIdx] + ' HD Full Video';
 
 			var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
 
 			var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid&igu=1';
 
-			var url2 = 'https://www.xvideos2.uk/?k='+query.replace(/ /g, '%20');
+			// var url2 = 'https://www.xvideos2.uk/?k='+query.replace(/ /g, '%20');
+			var url2 = 'https://www.milffox.com/search/?f=1&q='+query.replace(/ /g, '+');
 
 			var currentUrl = window.location.href;
 
@@ -72,7 +74,7 @@
 				}
 	
 				if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
-					window.open(url)
+					window.open(url);
 				} else {
 					window.location.href = url;
 				}
@@ -82,7 +84,7 @@
 </head>
 <body onload="buildRandomUrl()">
 	<center>
-		<u><a class="titleText" id="titleId"></a></u>
+		<a class="titleText" id="titleId"></a>
 		<br>
 		<button class="btns" onclick="window.location.href = '?google=no&open=newtab';">SEARCH IN NEW TAB</button>
 		<button class="btns" onclick="window.location.href = '?google=yes&open=newtab';">GOOGLE SEARCH IN<br>NEW TAB</button>

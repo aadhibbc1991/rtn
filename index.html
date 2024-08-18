@@ -47,6 +47,13 @@
 		var qs =  ['Lisa Ann mom', 'Raven Hart stepmom', 'Bridgette B milf', 'Tanya Tate stepmom', 'Aubrey Black', 'Alexis Fawx stepmom', 'Alexis Fawx milf', 'Diamond Foxxx mom', 'Tegan James', 'Raven Hart milf', 'Sophie Dee', 'Heather Vahn', 'Cory Chase mom', 'Brandi Love', 'Sophie Dee mom', 'Lexi Luna stepmom', 'Brooklyn Chase milf', 'Reagan Foxx', 'stepmom', 'Veronica Avluv', 'Ariella Ferrera milf', 'Shay Fox mom', 'Aubrey Black milf', 'Ava Addams', 'Bridgette B stepmom', 'Ava Addams milf', 'Ava Addams stepmom', 'Peta Jenson stepmom', 'Kendra Lust milf', 'Aubrey Black mom', 'Jessa Rhodes stepmom', 'Brooklyn Chase stepmom', 'Diamond Foxxx stepmom', 'Phoenix Marie milf', 'Sophie Dee milf', 'Jessa Rhodes milf', 'Cherie Deville stepmom', 'Brandi Love stepmom', 'Reagan Foxx milf', 'Kendra Lust stepmom', 'Eva Notty stepmom', 'Nikki Brooks', 'Nina Elle', 'Phoenix Marie mom', 'Lisa Ann', 'Zoey Holloway milf', 'Veronica Avluv stepmom', 'Peta Jenson milf', 'Peta Jenson mom', 'Ariella Ferrera', 'Nicole Aniston mom', 'Lexi Luna', 'Heather Vahn mom', 'Veronica Avluv milf', 'Zoey Holloway mom', 'Cherie Deville mom', 'Ava Addams mom', 'Sophie Dee stepmom', 'Krissy Lynn milf', 'Sheena Ryder stepmom', 'Shay Fox', 'Eva Notty', 'Reagan Foxx stepmom', 'Lexi Luna milf', 'Tegan James stepmom', 'Brooklyn Chase', 'Julia Ann mom', 'Cory Chase milf', 'Julia Ann stepmom', 'Krissy Lynn mom', 'milf', 'Jessa Rhodes mom', 'Brandi Love mom', 'Heather Vahn milf', 'Krissy Lynn', 'Nicole Aniston stepmom', 'Raven Hart', 'Diamond Foxxx', 'Aubrey Black stepmom', 'Shay Fox stepmom', 'Cherie Deville', 'Nicole Aniston', 'Alexis Fawx', 'Nina Elle mom', 'Ariella Ferrera mom', 'Tegan James milf', 'Phoenix Marie stepmom', 'Krissy Lynn stepmom', 'mom', 'Cathy Heaven stepmom', 'Jessa Rhodes', 'Cathy Heaven milf', 'Heather Vahn stepmom', 'Kendra Lust mom', 'Cherie Deville milf', 'Nicole Aniston milf', 'Brooklyn Chase mom', 'Nina Elle milf', 'Sheena Ryder mom', 'Eva Notty mom', 'Diamond Foxxx milf', 'Shay Fox milf', 'Zoey Holloway stepmom', 'Bridgette B', 'Eva Notty milf', 'Veronica Avluv mom', 'Ariella Ferrera stepmom', 'Cory Chase', 'Julia Ann', 'Tanya Tate', 'Tanya Tate milf', 'Cathy Heaven mom', 'Cory Chase stepmom', 'Sheena Ryder milf', 'Bridgette B mom', 'Zoey Holloway', 'Brandi Love milf', 'Nina Elle stepmom', 'Tegan James mom', 'Peta Jenson', 'Raven Hart mom', 'Phoenix Marie', 'Lisa Ann stepmom', 'Nikki Brooks milf', 'Lisa Ann milf', 'Julia Ann milf', 'Lexi Luna mom', 'Kendra Lust', 'Reagan Foxx mom', 'Cathy Heaven', 'Alexis Fawx mom', 'Sheena Ryder', 'Nikki Brooks stepmom', 'Tanya Tate mom', 'Nikki Brooks mom'];
 		var numOfUrls = qs.length;
 
+		function chooseRandom() {
+			var dt = new Date();
+			var ms = dt.getMilliseconds();
+			var i = ms % qs.length;
+			return qs[i];
+		}
+
 		function buildRandomUrl() {
 			
 			titleId.innerHTML = '🔥RANDOM SEARCH🔥 ' + numOfUrls + ' ENTRIES..';
@@ -60,7 +67,8 @@
 			
 			// var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + nature[natureIdx] + ' ' + situation[situationIdx] + ' HD Full Video';
 			
-			var query = qs[Math.floor(Math.random()*qs.length)];
+			// var query = qs[Math.floor(Math.random()*qs.length)];
+			var query = chooseRandom();
 
 			var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
 
@@ -92,7 +100,7 @@
 </head>
 <body onload="buildRandomUrl()">
 	<center>
-		<b><a class="titleText" id="titleId"></a></b>
+		<i><a class="titleText" id="titleId"></a></i>
 		<br>
 		<button class="btns" onclick="window.location.href = '?google=no&open=newtab';">SEARCH IN NEW TAB</button>
 		<button class="btns" onclick="window.location.href = '?google=yes&open=newtab';">GOOGLE SEARCH IN<br>NEW TAB</button>
